@@ -11,7 +11,7 @@ snackController.submitSnack = (req, res) => {
 			db.query(`UPDATE u SET submissioncount = submissioncount -1 WHERE username = '${req.body.username}';
 				  INSERT INTO post (snacklink, description, postby, votes) VALUES ('${req.body.snacklink}', '${req.body.comments}', '${req.body.username}', 0);`,
 				(err, result) => {
-					if (err) throw new Error(err);
+					if (err) throw err;
 					res.send('successfully posted');
 				});
 		}
@@ -19,7 +19,7 @@ snackController.submitSnack = (req, res) => {
 }
 
 snackController.deleteSnack = (req, res) => {
-	const deleteQuery = `Delete from "post" where id = ${req.body.id} and postby = '${req.body.username}';`;
+	const deleteQuery = `Delete from "post" where id = ${req.body.id} and postby = '${req.body.postby}';`;
 	db.query(deleteQuery, (err, result) => {
 		if (err || !result.rows[0]) {
 			res.status(400).json({error: "cannot delete post"});

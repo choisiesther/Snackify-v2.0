@@ -41,7 +41,7 @@ app.post('/delete', snackController.deleteSnack);
 //=================================================================
 
 app.get('/test', snackController.grabSnack, (req, res) => {
-	console.log(req.user);
+	// console.log(req.user);
 	req.user = JSON.parse(req.user);
 	req.user.gallery = res.locals.result;
 	res.json(req.user);
@@ -57,7 +57,3 @@ app.post('/comment', snackController.addComment);
 app.listen(3000, () => {
 	console.log('listening on port 3000...');
 });
-
-
-
-
