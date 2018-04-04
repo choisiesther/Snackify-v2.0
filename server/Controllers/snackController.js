@@ -18,20 +18,12 @@ snackController.submitSnack = (req, res) => {
 	});
 }
 
-<<<<<<< HEAD
-snackController.deleteSnack = (req, res) => {
-	const deleteQuery = `Delete from "post" where id = ${req.body.id} and postby = '${req.body.postby}';`;
-	db.query(deleteQuery, (err, result) => {
-		if (err || !result.rows[0]) {
-			res.status(400).json({error: "cannot delete post"});
-=======
 snackController.deleteSnack = (req, res, next) => {
 	const deleteComments = `Delete from comments where postid = ${req.body.id};`;
 	const deleteQuery = `Delete from "post" where id = ${req.body.id} and postby = '${req.body.username}';`;
 	db.query(deleteComments + deleteQuery, (err, result) => {
 		if (err) {
 			res.status(400).json({ error: "cannot delete post" });
->>>>>>> b66326cab959dbd4ebb29b13599d2495b6e1fb67
 		} else if (result) {
 			res.status(200);
 			next();

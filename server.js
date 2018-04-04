@@ -41,10 +41,6 @@ app.post('/delete', snackController.deleteSnack, userController.handleDelete);
 //=================================================================
 
 app.get('/test', snackController.grabSnack, (req, res) => {
-<<<<<<< HEAD
-	// console.log(req.user);
-=======
->>>>>>> b66326cab959dbd4ebb29b13599d2495b6e1fb67
 	req.user = JSON.parse(req.user);
 	req.user.gallery = res.locals.result;
 	res.json(req.user);
