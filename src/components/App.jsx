@@ -17,13 +17,12 @@ class App extends Component{
   componentDidMount() {
     console.log(`componentDidMount fired!!! `);
     fetch('/test', {credentials: "same-origin"})
-    .then(response => response.json())
-    .then(myJson => {
-      console.log('myJson', myJson);
-      this.setState(myJson);
-    })
-    .catch(err => console.log(err));
-
+      .then(response => response.json())
+      .then(myJson => {
+        console.log('myJson', myJson);
+        this.setState(myJson);
+      })
+      .catch(err => console.log(err));
   }
 
 	commentPost(content, postid, createdby) {
@@ -103,31 +102,24 @@ class App extends Component{
     }
     
 
-    render(){
+  render(){
 
-			let showSubmit = [];
-			let gallery = [];
-      if(this.state.submissioncount !== undefined && this.state.submissioncount > 0 ) {
-        showSubmit.push(<SubmissionForm username={this.state.username} />);
-      } else {
-        showSubmit.push(<div></div>);
-      }
-			
-			if(this.state.gallery !== undefined) {
-				gallery.push(<PhotoGallery gallery={this.state.gallery} usernameLoggedIn={this.state.username} commentPost={this.commentPost} voteUp={this.voteUp} deletePost={this.deletePost}/>);
-			} else {
-				gallery.push(<div></div>);
-			}
-        return (
-            <div>
-                <Header id='header' username={this.state.username}  avatar={this.state.avatar} />
-								{showSubmit}
-								{gallery}
-                <Footer />
-            </div>
-        );
-    }
-
+  let showSubmit = [];
+  if(this.state.submissioncount > 0 ) {
+    showSubmit.push(<SubmissionForm username={this.state.username} />);
+  } else {
+    showSubmit.push(<div></div>);
+  }
+    
+  return (
+    <div>
+      <Header id='header' username={this.state.username}  avatar={this.state.avatar} />
+      { showSubmit }
+      <PhotoGallery gallery={this.state.gallery} usernameLoggedIn={this.state.username} commentPost={this.commentPost} voteUp={this.voteUp} deletePost={this.deletePost}/>
+      <Footer />
+    </div>
+  );
+  }
 }
 
 export default App;
