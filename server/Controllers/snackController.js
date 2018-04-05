@@ -3,16 +3,18 @@ const db = require('./../DB/db');
 const snackController = {};
 
 snackController.submitSnack = (req, res) => {
+
 	db.query(`SELECT submissioncount from u where username = '${req.body.username}';`, (err, count) => {
 		console.log(JSON.stringify(count) + "<==== this is count");
 		if (count.rows[0].submissioncount === 0) {
 			res.send('You Eat Too Much');
 		} else {
 			db.query(`UPDATE u SET submissioncount = submissioncount -1 WHERE username = '${req.body.username}';
-						INSERT INTO post (snacklink, description, postby, votes) VALUES ('${req.body.snacklink}', '${req.body.comments}', '${req.body.username}', 0);`,
+						INSERT INTO post (snacklink, description, postby, votes) VALUES ('${req.body.snacklink}', '${req.body.comments}', '${req.body.username}', 0);
+						SELECT id FROM post where postby = '${req.body.username}';`,
 				(err, result) => {
 					if (err) throw err;
-					res.send('successfully posted');
+					res.json(`${result[2].rows[0].id}`);
 				});
 		}
 	});
@@ -20,7 +22,7 @@ snackController.submitSnack = (req, res) => {
 
 snackController.deleteSnack = (req, res, next) => {
 	const deleteComments = `Delete from comments where postid = ${req.body.id};`;
-	const deleteQuery = `Delete from "post" where id = ${req.body.id} and postby = '${req.body.username}';`;
+	const deleteQuery = `Delete from post where id = ${req.body.id} and postby = '${req.body.username}';`;
 	db.query(deleteComments + deleteQuery, (err, result) => {
 		if (err) {
 			res.status(400).json({ error: "cannot delete post" });
@@ -63,6 +65,7 @@ snackController.grabSnack = (req, res, next) => {
 				next();
 			}
 		});
+	
 }
 
 snackController.incrementVotes = (req, res, next) => {
@@ -83,6 +86,22 @@ snackController.addComment = (req, res) => {
 		if (err) throw err;
 		res.json('Successfully posted Comments');
 	});
+}
+
+snackController.deleteComments = (req, res, next) => {
+	const deleteCommentsQuery = `Delete from comments where id > 0;`;
+	db.query(deleteCommentsQuery, (err, comments) => {
+		if (err) throw err;
+		next();
+	})
+}
+
+snackController.deletePosts = (req, res, next) => {
+	const deletePostsQuery = `Delete from post where id > 0;`
+	db.query(deletePostsQuery, (err, posts) => {
+		if (err) throw err;
+		next();
+	})
 }
 
 
