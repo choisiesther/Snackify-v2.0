@@ -1,103 +1,197 @@
-*{
-    margin: 0;
-    padding: 0; 
-}
-body{
-    background-color: white;
-}
-header{
-    background-color:black;
-    color:white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    padding:10px; 
+* {
+  margin: 0;
+  padding: 0;
 }
 
-header ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+a {
+  text-decoration: none;
+  color: white;
 }
 
-header ul li{
-    margin-left:20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+body {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
-#currentUserImage{
-    width:40px;
-    height:40px;
-    border-radius: 50%;
+header {
+  background-color: grey;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-#currentUserDiv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-#logo{
-    font-size: 30px;
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-#submissionForm{
-    background-color:lightcoral;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+header ul li {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 0;
+  text-decoration: none;
+}
 
+.logout {
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#logo img{
+  max-width: 40%;
+  height: auto;
+  justify-content: center;
+}
+
+#currentUserImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#currentUserDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logo {
+  font-size: 30px;
+}
+
+/* ---------------------------SUBMISSION FORM--------------------------- */
+
+#submissionForm {
+  font-family: 'Lobster Two', cursive;
+  text-shadow: 1px 1px 0px #ededed, 3px 3px 0px rgba(0,0,0,0.15);
+  margin: auto;
+  background-color: #d18828;
+  border-radius: 8px;
+  width: 350px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #submissionForm h1 {
-    text-decoration: underline,
+  margin-top: 10px;
 }
 
-#submissionForm h1  {
-    text-decoration: underline,
+.subinput {
+  width: 50%;
+  padding: 2px 5px;
+  margin-top: 10px;
+  border-radius: 7px;
+  font-family: 'Roboto', sans-serif;
 }
 
-#photoGallery{
-    border: 1px solid darkgray;
-    border-radius: 5px;  
-    margin: 10px; 
-    display: flex;
-    flex-flow: row wrap; 
-    align-content: center;
-
-
+.subinput[type=text]:focus {
+  border: 3px solid rgb(97, 96, 96);
 }
 
-.entryImg{
-    width: 200px;
-    height: 200px;
-
+.subBtn {
+  width: 30%;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
-.entry{
-
-    border: 1px solid lightgray; 
-    margin: 50px; 
+.imageinput[type=text]:focus {
+  border: 3px solid rgb(97, 96, 96);
 }
+
+#photoGallery {
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  margin: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+/* ---------------------------ENTRY--------------------------- */
+.entry {
+  border: 1px solid lightgray;
+  margin: 50px;
+  width: 100%;
+  display: flex;
+}
+
+.userEntry {
+  text-align: left;
+  font-family: 'Lobster Two', cursive;
+  /* make a border box and add margin */
+}
+
+.entryImg {
+  width: 150px;
+  height: 150px;
+}
+
+
 .thumbsBtn {
-	background-color: transparent;
-}
-.thumbs {
-	width: 30px;
-	height:30px;
-	color: steelblue;
-	
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
 }
 
-#footer{
-    background-color: black; 
-    color: white;
- 
+.thumbs {
+  width: 20px;
+  height: 20px;
+  color: steelblue;
+  border-color: transparent;
+}
+
+.commentHolderDis {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments {
+  width: 80%;
+  background-color: white;
+  border: 2px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.commentBtn {
+  width: 50px;
+  padding: 0 3px;
+}
+
+.commentInput {
+  float: right;
+  border-radius: 7px;
+  width: 300px;
+}
+
+.deleteBtn {
+  height: 20px;
+  width: 50px;
+}
+
+#footer {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  color: white;
+  bottom: 0;
+  position: relative;
+  text-align: center;
+  background-color: rgb(36, 35, 35);
 }

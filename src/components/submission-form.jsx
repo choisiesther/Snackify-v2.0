@@ -32,10 +32,9 @@ class SubmissionForm extends Component {
 		return (
 			<div id='submissionForm'>
 				<h1>Add your Snack!!!</h1>
-				{/* add action and method!!!! */}
-				Image: <input id="imageinput" type='text' name='image' /> <br />
-				Comment: <input id="commentinput" type='text' name='comment' /> <br />
-				<button type='submit' onClick={(e)=>{this.submitEntry(e)}} > Add Snack </button>
+				<input className="subinput" id="imageinput" type='text' name='image' placeholder="Image URL" /> <br />
+				<input className="subinput" id="commentinput" type='text' name='comment' placeholder="Description"/> <br />
+				<button className="subBtn" type='submit' onClick={(e)=>{this.submitEntry(e)}} > Add Snack </button>
 			</div>
 		);
 	}

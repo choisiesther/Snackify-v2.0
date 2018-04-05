@@ -7,7 +7,7 @@ class Entry extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			content : '',
+			content: '',
 		}
 		this.textHandle = this.textHandle.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,13 +15,13 @@ class Entry extends Component {
 
 
 	textHandle(e) {
-		this.setState({content: e.target.value});
+		this.setState({ content: e.target.value });
 	}
 	handleSubmit() {
 		this.props.commentPost(this.state.content, this.props.userPost.id, this.props.usernameLoggedIn);
-		this.setState({content: ''});
+		this.setState({ content: '' });
 	}
-  
+
 	render() {
 		let id;
 		let username;
@@ -33,28 +33,32 @@ class Entry extends Component {
 			})
 		}
 		if (this.props.usernameLoggedIn === this.props.userPost.postby) {
-		
+
 			return (
-				<div className='entry'>
-					<div>{this.props.userPost.postby}</div>
-					<img className='entryImg' src={this.props.userPost.snacklink} />
-					{commentDisplay}
-					<div className="votes">{this.props.userPost.votes}</div>
-					<button className="thumbsBtn" onClick={() => {this.props.voteUp(this.props.usernameLoggedIn, this.props.userPost.postby)} }><ThumbsUp className="thumbs" /></button>
+				<div className="entry">
+					<div className="postInfo">
+						<div className="userEntry">{this.props.userPost.postby}</div>
+						<img className='entryImg' src={this.props.userPost.snacklink} />
+					</div>
+					<div className="commentHolder">
+						<div className="votes">{this.props.userPost.votes}</div>
+						<button className="thumbsBtn" onClick={() => { this.props.voteUp(this.props.usernameLoggedIn, this.props.userPost.postby) }}><ThumbsUp className="thumbs" /></button>
+						{commentDisplay}
+						<input className="commentInput" onChange={this.textHandle} value={this.state.content} />
+						<button className="commentBtn" onClick={this.handleSubmit}> REPLY </button>
+					</div>
 					<button className="deleteBtn" onClick={() => { this.props.deletePost(this.props.userPost.id, this.props.usernameLoggedIn) }} > Delete </button>
-					<input className="commentInput" onChange={this.textHandle} value={this.state.content}/>
-					<button className="commentBtn" onClick={this.handleSubmit}> reply </button>
 				</div>
 			);
 		} else {
 			return (
-				<div className='entry'>
+				<div className="entry">
 					<div>{this.props.userPost.postby}</div>
-					<img className='entryImg' src={this.props.userPost.snacklink} />
+					<img className="entryImg" src={this.props.userPost.snacklink} />
 					{commentDisplay}
 					<div className="votes">{this.props.userPost.votes}</div>
-					<button className="thumbsBtn" onClick={() => {this.props.voteUp(this.props.usernameLoggedIn, this.props.userPost.postby)}}><ThumbsUp className="thumbs" /></button>
-					<input className="commentInput" onChange={this.textHandle} value={this.state.content}/>
+					<button className="thumbsBtn" onClick={() => { this.props.voteUp(this.props.usernameLoggedIn, this.props.userPost.postby) }}><ThumbsUp className="thumbs" /></button>
+					<input className="commentInput" onChange={this.textHandle} value={this.state.content} />
 					<button className="commentBtn" onClick={this.handleSubmit}> reply </button>
 				</div>
 			)
