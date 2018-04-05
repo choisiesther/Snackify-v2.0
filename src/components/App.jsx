@@ -6,16 +6,6 @@ import Footer from './footer.jsx';
 import Countdown from 'react-countdown-now';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {};
-    this.deletePost = this.deletePost.bind(this);
-    this.voteUp = this.voteUp.bind(this);
-    this.commentPost = this.commentPost.bind(this);
-  }
-
-
-class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {};
