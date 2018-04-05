@@ -8,9 +8,7 @@
     "start": "nodemon server.js",
     "webpack": "webpack -w",
     "build": "webpack && npm start",
-    "start:dev": "webpack-dev-server --hot",
-    "start": "nodemon server.js",
-    "webpack": "webpack -w"
+    "start:dev": "webpack-dev-server --hot"
   },
   "repository": {
     "type": "git",
