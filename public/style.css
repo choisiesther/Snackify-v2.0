@@ -6,6 +6,7 @@
 a {
   text-decoration: none;
   color: white;
+<<<<<<< HEAD
 }
 
 body {
@@ -50,6 +51,66 @@ header ul li {
   max-width: 40%;
   height: auto;
   justify-content: center;
+=======
+}
+
+body {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: #89e5e8;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#logo img{
+	filter: drop-shadow( 1px 4px 30px rgba(0, 0, 0, 0.2));
+	filter: drop-shadow( 0 6px 20px rgba(0, 0, 0, 0.19));
+	width: 200px;
+  height: 200px;
+	margin-top: 60px;
+	margin-left: 50px;
+	
+}
+
+h1{
+ text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+.logout{
+	display: flex;
+	align-self: center;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+header ul li {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 0;
+  text-decoration: none;
+}
+
+.logout {
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+>>>>>>> 04fdd5616a0e541e052990f7c3d28284055c416a
 }
 
 #currentUserImage {
@@ -71,10 +132,17 @@ header ul li {
 /* ---------------------------SUBMISSION FORM--------------------------- */
 
 #submissionForm {
+<<<<<<< HEAD
   font-family: 'Lobster Two', cursive;
   text-shadow: 1px 1px 0px #ededed, 3px 3px 0px rgba(0,0,0,0.15);
   margin: auto;
   background-color: #d18828;
+=======
+	font-family: 'Courier New', Courier, monospace;
+  text-shadow:  3px 3px 10px rgba(0,0,0,0.15);
+  margin: auto;
+  background-color: #8d5dc4;
+>>>>>>> 04fdd5616a0e541e052990f7c3d28284055c416a
   border-radius: 8px;
   width: 350px;
   margin-top: 40px;
@@ -86,6 +154,7 @@ header ul li {
 }
 
 #submissionForm h1 {
+<<<<<<< HEAD
   margin-top: 10px;
 }
 
@@ -98,6 +167,23 @@ header ul li {
 }
 
 .subinput[type=text]:focus {
+=======
+	color: white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.subInput {
+  width: 50%;
+	padding: 2px 5px;
+	margin: 10px 10px;
+  border-radius: 5px;
+	font-family: 'Roboto', sans-serif;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.subInput[type=text]:focus {
+>>>>>>> 04fdd5616a0e541e052990f7c3d28284055c416a
   border: 3px solid rgb(97, 96, 96);
 }
 
@@ -109,12 +195,17 @@ header ul li {
   font-family: 'Roboto', sans-serif;
 }
 
+<<<<<<< HEAD
 .imageinput[type=text]:focus {
+=======
+.imageInput[type=text]:focus {
+>>>>>>> 04fdd5616a0e541e052990f7c3d28284055c416a
   border: 3px solid rgb(97, 96, 96);
 }
 
 #photoGallery {
   border: 1px solid darkgray;
+<<<<<<< HEAD
   border-radius: 5px;
   margin: 10px;
   margin-top: 20px;
@@ -129,11 +220,43 @@ header ul li {
   margin: 50px;
   width: 100%;
   display: flex;
+=======
+	border-radius: 5px;
+	padding: 10px;
+  margin: 10px;
+  margin-top: 40px;
+	display: flex;
+	flex-direction: column;
+  flex-flow: row wrap;
+	align-content: center;
+	justify-content: center;
+	box-shadow: inset 3px 3px 23px -2px rgba(0,0,0,0.40);
+	border-radius: 10px;
+}
+
+/* ---------------------------ENTRY--------------------------- */
+.outter{
+	width: 90%;
+	padding:10px;
+	
+}
+.entry {
+  border: 1px solid lightgray;
+  width: 100%;
+	display: flex;
+	box-shadow: 1px 1px 10px 0px rgba(0,0,0,.50);
+	border-radius: 10px;
+>>>>>>> 04fdd5616a0e541e052990f7c3d28284055c416a
 }
 
 .userEntry {
   text-align: left;
+<<<<<<< HEAD
   font-family: 'Lobster Two', cursive;
+=======
+	font-size: 25px;
+	text-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+>>>>>>> 04fdd5616a0e541e052990f7c3d28284055c416a
   /* make a border box and add margin */
 }
 
@@ -156,7 +279,11 @@ header ul li {
   border-color: transparent;
 }
 
+<<<<<<< HEAD
 .commentHolderDis {
+=======
+.commentHolder {
+>>>>>>> 04fdd5616a0e541e052990f7c3d28284055c416a
   display: flex;
   flex-direction: column;
 }
@@ -178,6 +305,7 @@ header ul li {
   float: right;
   border-radius: 7px;
   width: 300px;
+<<<<<<< HEAD
 }
 
 .deleteBtn {
@@ -185,6 +313,15 @@ header ul li {
   width: 50px;
 }
 
+=======
+}
+
+.deleteBtn {
+  height: 20px;
+  width: 50px;
+}
+
+>>>>>>> 04fdd5616a0e541e052990f7c3d28284055c416a
 #footer {
   width: 100%;
   height: 50px;
@@ -194,4 +331,23 @@ header ul li {
   position: relative;
   text-align: center;
   background-color: rgb(36, 35, 35);
+<<<<<<< HEAD
 }
+=======
+}
+
+
+/* Add CommentCollapse 
+
+Message Input
+
+Message @Esther
+
+*bold* _italics_ ~strike~ `code` ```preformatted``` >quote
+Workspace Directory
+
+Madalyn Baehre 
+Call
+Message */
+
+>>>>>>> 04fdd5616a0e541e052990f7c3d28284055c416a
